@@ -65,12 +65,28 @@ public class GameOfLifeTest {
 			}
 		}
 		
-		GameOfLife game = new GameOfLife(5, board);
+		GameOfLife game = new GameOfLife(13, board);
 		game.run();
 		
 		assertAllFalse(game.getBoard());
 	}
 	
+	@Test
+	public void moderateCase()
+	{
+		
+	}
+	
+	private void assertBoardsEqual(Boolean[][] expected, Boolean[][] actual)
+	{
+		for(int i=0;i<actual.length;i++)
+		{
+			for(int j=0;j<actual[i].length;j++)
+			{
+				Assert.assertEquals(expected[i][j], actual[i][j]);
+			}
+		}
+	}
 	
 	private void assertAllFalse(Boolean[][] board)
 	{

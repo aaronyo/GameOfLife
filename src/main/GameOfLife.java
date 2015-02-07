@@ -54,12 +54,12 @@ public class GameOfLife
 		// Just add all neighbor indices, we will clean them up right after
 		neighborIndices.add((i-1) + "," + (j-1));
 		neighborIndices.add((i-1) + "," + j);
-		neighborIndices.add((i-1) + "," + j);
-		neighborIndices.add(i + "," + j);
-		neighborIndices.add((i+1) + "," + (j+1));
-		neighborIndices.add((i+1) + "," + j);
-		neighborIndices.add((i+1) + "," + (j-1));
+		neighborIndices.add((i-1) + "," + (j+1));
 		neighborIndices.add(i + "," + (j-1));
+		neighborIndices.add(i + "," + (j+1));
+		neighborIndices.add((i+1) + "," + (j-1));
+		neighborIndices.add((i+1) + "," + j);
+		neighborIndices.add((i+1) + "," + (j+1));
 		
 		// Now process all the neighbors, wrapping any indices that
 		// are out of bounds
@@ -105,7 +105,7 @@ public class GameOfLife
 		{
 			for(int j=0;j<gameBoard[i].length;j++)
 			{
-				System.out.print(gameBoard[i][j] + " ");
+				System.out.print((gameBoard[i][j] ? 1 : 0) + " ");
 			}
 			System.out.println();
 		}
