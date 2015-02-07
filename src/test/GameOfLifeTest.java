@@ -74,7 +74,19 @@ public class GameOfLifeTest {
 	@Test
 	public void moderateCase()
 	{
+		Boolean[][] board = new Boolean[3][3];
+		board[0][0] = true;
+		board[0][1] = true;
+		board[0][2] = true;
+		board[1][0] = false;
+		board[1][1] = false;
+		board[1][2] = false;
+		board[2][0] = true;
+		board[2][1] = true;
+		board[2][2] = true;
 		
+		GameOfLife game = new GameOfLife(0, board);
+		game.run();
 	}
 	
 	private void assertBoardsEqual(Boolean[][] expected, Boolean[][] actual)

@@ -44,7 +44,15 @@ public class GameOfLife
 	// Get the state of piece at i,j for the next iteration of the game
 	private boolean getPieceState(int i, int j)
 	{
-		return getAliveNeighborCount(i, j) == 3;
+		if(gameBoard[i][j])
+		{
+			return getAliveNeighborCount(i, j) == 2 ||
+					getAliveNeighborCount(i, j) == 3;
+		}
+		else
+		{
+			return getAliveNeighborCount(i, j) == 3;
+		}
 	}
 	
 	private int getAliveNeighborCount(int i, int j) {
