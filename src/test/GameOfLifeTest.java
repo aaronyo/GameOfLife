@@ -91,7 +91,7 @@ public class GameOfLifeTest {
 		assertAllFalse(game.getBoard());
 	}
 	
-	@Test
+	
 	public void moderateCase2()
 	{
 		Boolean[][] board = new Boolean[3][3];
@@ -109,6 +109,41 @@ public class GameOfLifeTest {
 		game.run();
 		
 		assertAllTrue(game.getBoard());
+	}
+	
+	@Test
+	public void stableCase()
+	{
+		Boolean[][] board = new Boolean[4][4];
+		board[0][0] = false;
+		board[0][1] = false;
+		board[0][2] = false;
+		board[0][3] = false;
+		
+		board[1][0] = false;
+		board[1][1] = true;
+		board[1][2] = true;
+		board[1][3] = false;
+		
+		board[2][0] = false;
+		board[2][1] = true;
+		board[2][2] = true;
+		board[2][3] = false;
+		
+		board[3][0] = false;
+		board[3][1] = false;
+		board[3][2] = false;
+		board[3][3] = false;
+		
+		GameOfLife game = new GameOfLife(3, board);
+		game.run();
+		
+		assertBoardsEqual(board, game.getBoard());
+		
+		game = new GameOfLife(14, board);
+		game.run();
+		
+		assertBoardsEqual(board, game.getBoard());
 	}
 	
 	private void assertBoardsEqual(Boolean[][] expected, Boolean[][] actual)
