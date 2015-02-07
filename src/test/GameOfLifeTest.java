@@ -1,15 +1,16 @@
 package test;
 
+import main.GameOfLife;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 public class GameOfLifeTest {
-	Boolean[][] board;
 	
 	@Test
 	public void allTrue()
 	{		
-		board = new Boolean[5][5];
+		Boolean[][] board = new Boolean[5][5];
 		
 		for(int i=0;i<board.length;i++)
 		{
@@ -19,13 +20,16 @@ public class GameOfLifeTest {
 			}
 		}
 		
-		assertAllTrue();
+		GameOfLife game = new GameOfLife(5, board);
+		game.run();
+		
+		assertAllTrue(game.getBoard());
 	}
 	
 	@Test
 	public void allFalse()
 	{		
-		board = new Boolean[5][5];
+		Boolean[][] board = new Boolean[5][5];
 		
 		for(int i=0;i<board.length;i++)
 		{
@@ -35,13 +39,16 @@ public class GameOfLifeTest {
 			}
 		}
 		
-		assertAllFalse();
+		GameOfLife game = new GameOfLife(5, board);
+		game.run();
+		
+		assertAllFalse(game.getBoard());
 	}
 	
 	@Test
 	public void simpleCase()
 	{		
-		board = new Boolean[3][3];
+		Boolean[][] board = new Boolean[3][3];
 		
 		for(int i=0;i<board.length;i++)
 		{
@@ -58,11 +65,14 @@ public class GameOfLifeTest {
 			}
 		}
 		
-		assertAllFalse();
+		GameOfLife game = new GameOfLife(5, board);
+		game.run();
+		
+		assertAllFalse(game.getBoard());
 	}
 	
 	
-	private void assertAllFalse()
+	private void assertAllFalse(Boolean[][] board)
 	{
 		for(int i=0;i<board.length;i++)
 		{
@@ -73,7 +83,7 @@ public class GameOfLifeTest {
 		}
 	}
 	
-	private void assertAllTrue()
+	private void assertAllTrue(Boolean[][] board)
 	{
 		for(int i=0;i<board.length;i++)
 		{

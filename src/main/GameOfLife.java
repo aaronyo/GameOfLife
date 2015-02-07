@@ -52,4 +52,8 @@ public class GameOfLife
 			System.out.println();
 		}
 	}
+	
+	public Boolean[][] getBoard() {
+		return gameBoard;
+	}
 }
