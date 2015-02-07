@@ -8,7 +8,7 @@ import org.junit.Test;
 public class GameOfLifeTest {
 	
 	@Test
-	public void allTrue()
+	public void startAllTrue()
 	{		
 		Boolean[][] board = new Boolean[5][5];
 		
@@ -23,11 +23,11 @@ public class GameOfLifeTest {
 		GameOfLife game = new GameOfLife(5, board);
 		game.run();
 		
-		assertAllTrue(game.getBoard());
+		assertAllFalse(game.getBoard());
 	}
 	
 	@Test
-	public void allFalse()
+	public void startAllFalse()
 	{		
 		Boolean[][] board = new Boolean[5][5];
 		
