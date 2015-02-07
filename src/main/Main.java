@@ -1,14 +1,13 @@
-package com.gameoflife.main;
+package main;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.gameoflife.game.GameOfLife;
-
-public class Main {
-	
-	public static void main(String[] args) {
+public class Main
+{
+	public static void main(String[] args)
+	{
 		int iterations;
 		String[] widthAndHeight;
 		int width;
@@ -20,7 +19,8 @@ public class Main {
 		iterations = Integer.parseInt(readNextLine(reader, "How many iterations?"));
 		widthAndHeight = readNextLine(reader, "Width and height?").split(" ");
 		
-		if(widthAndHeight.length < 2 || widthAndHeight.length > 2) {
+		if(widthAndHeight.length < 2 || widthAndHeight.length > 2)
+		{
 			System.out.println("Invalid format for width and height. Please split them with a space.");
 			System.exit(1);
 		}
@@ -32,15 +32,17 @@ public class Main {
 		
 		// Populate the game board
 		int i = 0;
-		while(i < height) {
+		while(i < height)
+		{
 			String[] currentLine = readNextLine(reader, "").split(" ");
-			if(currentLine.length != width) {
+			if(currentLine.length != width)
+			{
 				System.out.println("Invalid row specified. Make sure it is " + width + " characters long and space separated.");
 				System.exit(1);
 			}
-			for(int j=0;j<width;j++) {
-				System.out.println(currentLine[j]);
-				gameBoard[j][i] = currentLine[j] == "1" ? true : false;
+			for(int j=0;j<width;j++)
+			{
+				gameBoard[j][i] = Boolean.valueOf(currentLine[j].equals("1") ? true : false);
 			}
 			
 			i++;
@@ -51,20 +53,24 @@ public class Main {
 		game.run();
 	}
 	
-	private static String readNextLine(BufferedReader reader, String message) {
+	private static String readNextLine(BufferedReader reader, String message)
+	{
 		String result = null;
 		
-		try {
-			if(message != "") {
+		try
+		{
+			if(message != "")
+			{
 				System.out.print(message);
 			}
 			result = reader.readLine();
-		} catch (IOException ioe) {
+		} 
+		catch (IOException ioe)
+		{
 			System.out.println("Failed to read input!");
 			System.exit(1);
 		}
 		
 		return result;
 	}
-	
 }
