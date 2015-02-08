@@ -32,7 +32,7 @@ public class GameOfLife
 		
 		for(int i=0;i<gameBoard.length;i++)
 		{
-			for(int j=0;j<gameBoard[i].length;j++)
+			for(int j=0;j<gameBoard[0].length;j++)
 			{
 				nextGameBoard[i][j] = getPieceState(i, j);
 			}
@@ -111,7 +111,7 @@ public class GameOfLife
 	{ 
 		for(int i=0;i<gameBoard.length;i++)
 		{
-			for(int j=0;j<gameBoard[i].length;j++)
+			for(int j=0;j<gameBoard[0].length;j++)
 			{
 				System.out.print((gameBoard[i][j] ? 1 : 0) + " ");
 			}
