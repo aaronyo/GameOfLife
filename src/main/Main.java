@@ -42,7 +42,7 @@ public class Main
 			}
 			for(int j=0;j<width;j++)
 			{
-				gameBoard[j][i] = Boolean.valueOf(currentLine[j].equals("1") ? true : false);
+				gameBoard[i][j] = Boolean.valueOf(currentLine[j].equals("1") ? true : false);
 			}
 			
 			i++;

@@ -14,7 +14,7 @@ public class GameOfLifeTest {
 		
 		for(int i=0;i<board.length;i++)
 		{
-			for(int j=0;j<board[i].length;j++)
+			for(int j=0;j<board[0].length;j++)
 			{
 				board[i][j] = true;
 			}
@@ -232,7 +232,7 @@ public class GameOfLifeTest {
 	{
 		for(int i=0;i<board.length;i++)
 		{
-			for(int j=0;j<board[i].length;j++)
+			for(int j=0;j<board[0].length;j++)
 			{
 				Assert.assertFalse(board[i][j]);
 			}
@@ -243,7 +243,7 @@ public class GameOfLifeTest {
 	{
 		for(int i=0;i<board.length;i++)
 		{
-			for(int j=0;j<board[i].length;j++)
+			for(int j=0;j<board[0].length;j++)
 			{
 				Assert.assertTrue(board[i][j]);
 			}
